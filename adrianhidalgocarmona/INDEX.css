@@ -1,12 +1,9 @@
-/* ================================
-    ESTILOS BASE
-================================ */
+
 body {
 	margin: 0;
-	font-family: Arial, sans-serif; /* Puedes ajustar la fuente */
+	font-family: Arial, sans-serif;
   }
   
-  /* Hacemos que todas las imágenes sean fluidas */
   img {
 	max-width: 100%;
 	height: auto;
@@ -17,37 +14,32 @@ body {
 	text-decoration: none;
   }
 
-/* Para móviles: convertimos el contenedor de productos en un carrusel horizontal */
 @media (max-width: 480px) {
-	/* Navegación en columna (ya existente) */
 	#inicio-container {
 	  flex-direction: column;
 	}
 	
-	/* Transformamos el contenedor en un scroll horizontal */
 	#Ropaparacomprar-container {
 	  display: flex;
 	  overflow-x: auto;
 	  scroll-snap-type: x mandatory;
-	  -webkit-overflow-scrolling: touch; /* para desplazamiento suave en iOS */
-	  gap: 10px; /* separación entre elementos */
+	  -webkit-overflow-scrolling: touch; 
+	  gap: 10px; 
 	  padding: 10px;
 	}
 	
-	/* Cada "slide" se alinea en el centro y se mantiene con ancho fijo */
+	
 	#Ropaparacomprar-container > div {
-	  flex: 0 0 auto; /* evita que se ajusten automáticamente */
+	  flex: 0 0 auto; 
 	  scroll-snap-align: center;
-	  width: 90%; /* ancho casi completo de la pantalla */
+	  width: 90%; 
 	}
 	
-	/* Ajuste del botón de "SHOW MORE" si fuera necesario */
 	.show-more-btn {
 	  padding: 8px 16px;
 	  font-size: 14px;
 	}
 	
-	/* Otros ajustes para CLUBVIP y FOOTER ya existentes */
 	#CLUBVIP {
 	  padding: 20px;
 	}
@@ -59,13 +51,11 @@ body {
   }
   
   
-  /* Banner: ahora ocupa el 100% del ancho */
   #banner img {
 	width: 100%;
 	height: auto;
   }
   
-  /* Envios gratis */
   #enviosgratis {
 	border: 5px solid black;
 	text-align: center;
@@ -75,9 +65,7 @@ body {
 	padding: 10px 0;
   }
   
-  /* ================================
-	  CABECERA / NAV
-  ================================ */
+
   #inicio-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -108,11 +96,8 @@ body {
 	padding: 3px 2px;
   }
   
-  /* ================================
-	  PRODUCTOS Y SECCIONES
-  ================================ */
+
   
-  /* Contenedores de productos (Se adaptan de fila a columna en móvil) */
   #Ropaparacomprar-container,
   #Ropaparacomprar-container2,
   #Ropaparacomprar-container3 {
@@ -122,28 +107,23 @@ body {
 	margin: 20px auto; 
   }
   
-  /* Cada producto: utilizamos una clase genérica para evitar repetir código */
   .producto {
 	border: 5px solid white;
-	background: #eaeaea;  /* fondo suave para visualizar */
+	background: #eaeaea;  
 	margin: 10px;
 	padding: 10px;
 	text-align: center;
 	font-family: 'DIN Neuzeit Grotesk', sans-serif;
-	/* Para que tres productos entren en fila en escritorio, se usa un ancho relativo */
-	flex: 1 1 calc(25% - 20px); /* 4 productos por fila */
+	flex: 1 1 calc(25% - 20px); 
 	box-sizing: border-box;
   }
   
-  /* Si tienes imágenes dentro del producto, asegúrate de que se adapten */
   .producto img {
 	width: 100%;
-	max-width: 270px; /* Si deseas mantener un máximo */
+	max-width: 270px; 
   }
   
-  /* ================================
-	  CLUB VIP Y FOOTER
-  ================================ */
+
   #CLUBVIP {
 	border: 5px solid white;
 	text-align: center;
@@ -162,9 +142,7 @@ body {
 	box-sizing: border-box;
   }
   
-  /* ================================
-	  BOTONES
-  ================================ */
+
   .show-more-btn {
 	background-color: #000;
 	color: #fff;
@@ -194,37 +172,28 @@ body {
 	outline: none;
   }
   
-  /* ================================
-	  MEDIA QUERIES (RESPONSIVE)
-  ================================ */
-  
-  /* Para tablets y pantallas medianas */
+
   @media (max-width: 768px) {
 	#inicio-container {
 	  flex-direction: column;
 	  align-items: center;
 	}
 	
-	/* Los productos se adaptan para mostrar 2 por fila */
 	.producto {
 	  flex: 1 1 calc(50% - 20px);
 	}
 	
-	/* Ajustar márgenes y paddings en textos y contenedores */
 	h2, p {
 	  text-align: center;
 	  font-size: 1.1rem;
 	}
   }
   
-  /* Para móviles */
   @media (max-width: 480px) {
-	/* Navegación en columna */
 	#inicio-container {
 	  flex-direction: column;
 	}
 	
-	/* Los productos ocuparán casi el ancho completo */
 	.producto {
 	  flex: 1 1 90%;
 	}
@@ -234,7 +203,6 @@ body {
 	  font-size: 14px;
 	}
 	
-	/* Ajuste para el CLUBVIP y FOOTER para evitar desbordes */
 	#CLUBVIP {
 	  padding: 20px;
 	}
