@@ -1,0 +1,238 @@
+body {
+	margin: 0px;
+}
+
+/* ===============================
+   Estilos generales
+=============================== */
+#enviosgratis {
+    border: 5px solid black;
+    text-align: center;
+    font-family: DIN Neuzeit Grotesk, sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* Los estilos de #inicio e #inicio2 se mantienen, aunque en esta página no se usan */
+#inicio {
+    border: 5px solid rgb(255, 255, 255);
+    background: blue;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+    margin-right: 250px;
+    margin-left: 37px;
+}
+
+#inicio2 {
+    border: 0px solid rgb(35, 164, 187);
+    background: blue;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+    margin-left: 380px;
+}
+
+/* ===============================
+   Productos: Contenedor y cajas
+=============================== */
+#Ropaparacomprar-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-left: 370px; /* Este margen fijo se ajustará en media queries */
+}
+
+#Ropaparacomprar2 {
+    border: 5px solid white;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    font-family: DIN Neuzeit Grotesk, sans-serif;
+    /* Se asigna una base flexible para que cada caja no sea menor que su imagen */
+    flex: 1 1 270px;
+}
+
+/* ===============================
+   Navegación extra (si se usa en otras secciones)
+=============================== */
+#inicio-container {
+    display: flex;
+    flex-wrap: wrap; /* Ajuste cuando no hay suficiente espacio */
+    justify-content: space-between; /* Espaciado uniforme */
+}
+
+#inicio-container #inicio a {
+	text-decoration: none; 
+	color: #000; 
+	font-weight: bold; 
+	transition: color 0.3s, background-color 0.3s; 
+}
+
+#inicio-container #inicio a:hover {
+	color: #ff6600; 
+	background-color: #dfcbcb; 
+	border-radius: 5px; 
+	padding: 3px 2px;
+}
+
+/* ===============================
+   CLUB VIP
+=============================== */
+#CLUBVIP {
+    border: 5px solid white;
+    text-align: center;
+    clear: left;
+    background-image: url(https://agongym.com/cdn/shop/files/Disseny_sense_titol_6_a00a69a1-3435-4c0c-a23b-a207eb2c5012_1500x.png?v=1635291200);
+    height: 400px;
+}
+
+/* ===============================
+   Footer final
+=============================== */
+#final {
+    border: 5px solid white;
+    text-align: center;
+    float: left;
+    margin-right: 100px;
+    margin-left: 285px;
+    height: 400px;
+}			
+#final a {
+    text-decoration: none;
+    color: inherit; /* Mantiene el color del texto sin cambios */
+}
+
+img {
+	transition: transform 0.3s ease;
+  }
+  
+  img:hover {
+	transform: scale(1.05);
+  }
+
+.izquierda { font-family: serif; }
+.centro { font-family: serif; }
+.derecha { font-family: serif; }
+
+.p1 {
+    font-family: DIN Neuzeit Grotesk, sans-serif;
+    text-align: center;
+    margin-left: 700px;
+    margin-right: 730px;
+    color: #FFFFFF;
+    height: 50px;
+}
+
+p { font-family: algerian;
+text-decoration: none; }
+
+
+del { color: red; }
+
+/* ===============================
+   Botón "show more"
+=============================== */
+.show-more-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    outline: none;
+}
+    
+.show-more-btn:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #000;
+    transform: scale(1.05);
+}
+    
+.show-more-btn:active {
+    background-color: #222;
+    transform: scale(1);
+}
+    
+.show-more-btn:focus {
+    outline: none;
+}
+
+/* ===============================
+   Script: imagen dinámica
+=============================== */
+.image-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#dynamicImage {
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#dynamicImage:hover {
+    transform: scale(1.1);
+}
+
+/* ===============================
+   MEDIA QUERIES RESPONSIVE
+=============================== */
+
+/* Para pantallas medianas (tablets y pantallas de hasta 992px) */
+@media screen and (max-width: 992px) {
+    /* Se elimina el margen excesivo del contenedor de productos */
+    #Ropaparacomprar-container2 {
+        margin-left: 20px;
+        justify-content: center;
+    }
+    
+    /* Se ajusta el footer para que no queden flotados */
+    #final {
+        float: none;
+        margin: 20px auto;
+        width: 90%;
+        height: auto;
+    }
+    
+    /* Se reducen los márgenes de .p1 */
+    .p1 {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 10px;
+    }
+    
+    /* Se ajusta CLUBVIP para que se adapte en altura */
+    #CLUBVIP {
+        height: auto;
+        padding: 20px;
+    }
+}
+
+/* Para móviles (pantallas de hasta 576px) */
+@media screen and (max-width: 576px) {
+    /* El contenedor de productos pasa a columna y se centra */
+    #Ropaparacomprar-container2 {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Cada caja de producto ocupará casi el ancho completo */
+    #Ropaparacomprar2 {
+        width: 90%;
+        margin: 10px 0;
+    }
+    
+    /* Los footer se apilan verticalmente */
+    #final {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

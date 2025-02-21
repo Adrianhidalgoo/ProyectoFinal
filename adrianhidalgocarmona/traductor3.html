@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Multilenguaje</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        header, footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        .language-select, .search-bar {
+            margin: 10px auto;
+            text-align: center;
+        }
+        select, input[type="text"] {
+            padding: 5px;
+            margin: 5px;
+        }
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="main-title">Bienvenido a nuestra página multilenguaje</h1>
+        <p id="subtitle">Aquí encontrarás información sobre diversos temas.</p>
+    </header>
+
+    <div class="language-select">
+        <label for="language">Selecciona tu idioma:</label>
+        <select id="language" onchange="translatePage()">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+        </select>
+    </div>
+
+    <div class="search-bar">
+        <label for="search">Buscar en el texto:</label>
+        <input type="text" id="search" placeholder="Escribe una palabra..." oninput="highlightSearch()">
+    </div>
+
+    <main>
+        <section>
+            <h2 id="section1-title">Acerca de Nosotros</h2>
+            <p id="section1-text">
+                Somos una organización dedicada a ofrecer servicios de calidad en diferentes áreas, 
+                adaptándonos a las necesidades de nuestros clientes.
+            </p>
+        </section>
+
+        <section>
+            <h2 id="section2-title">Nuestros Servicios</h2>
+            <ul id="section2-list">
+                <li>Consultoría profesional en tecnología.</li>
+                <li>Desarrollo de software a medida.</li>
+                <li>Capacitaciones y talleres educativos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 id="section3-title">Contacto</h2>
+            <p id="section3-text">
+                Si tienes alguna pregunta o deseas saber más sobre nosotros, no dudes en ponerte en contacto. 
+                Estamos aquí para ayudarte.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p id="footer-text">Derechos reservados © 2024 - Nuestra Empresa</p>
+    </footer>
+
+    <script>
+        // Diccionario de traducciones
+        const translations = {
+            "es": {
+                "main-title": "Bienvenido a nuestra página multilenguaje",
+                "subtitle": "Aquí encontrarás información sobre diversos temas.",
+                "section1-title": "Acerca de Nosotros",
+                "section1-text": "Somos una organización dedicada a ofrecer servicios de calidad en diferentes áreas, adaptándonos a las necesidades de nuestros clientes.",
+                "section2-title": "Nuestros Servicios",
+                "section2-list": [
+                    "Consultoría profesional en tecnología.",
+                    "Desarrollo de software a medida.",
+                    "Capacitaciones y talleres educativos."
+                ],
+                "section3-title": "Contacto",
+                "section3-text": "Si tienes alguna pregunta o deseas saber más sobre nosotros, no dudes en ponerte en contacto. Estamos aquí para ayudarte.",
+                "footer-text": "Derechos reservados © 2024 - Nuestra Empresa"
+            },
+            "en": {
+                "main-title": "Welcome to our multilingual page",
+                "subtitle": "Here you will find information on various topics.",
+                "section1-title": "About Us",
+                "section1-text": "We are an organization dedicated to providing quality services in various areas, tailored to the needs of our clients.",
+                "section2-title": "Our Services",
+                "section2-list": [
+                    "Professional consulting in technology.",
+                    "Custom software development.",
+                    "Training and educational workshops."
+                ],
+                "section3-title": "Contact",
+                "section3-text": "If you have any questions or want to learn more about us, feel free to get in touch. We're here to help.",
+                "footer-text": "All rights reserved © 2024 - Our Company"
+            },
+            "fr": {
+                "main-title": "Bienvenue sur notre page multilingue",
+                "subtitle": "Vous trouverez ici des informations sur divers sujets.",
+                "section1-title": "À propos de nous",
+                "section1-text": "Nous sommes une organisation dédiée à fournir des services de qualité dans divers domaines, adaptés aux besoins de nos clients.",
+                "section2-title": "Nos Services",
+                "section2-list": [
+                    "Consultation professionnelle en technologie.",
+                    "Développement de logiciels sur mesure.",
+                    "Formations et ateliers éducatifs."
+                ],
+                "section3-title": "Contact",
+                "section3-text": "Si vous avez des questions ou souhaitez en savoir plus sur nous, n'hésitez pas à nous contacter. Nous sommes là pour vous aider.",
+                "footer-text": "Tous droits réservés © 2024 - Notre Entreprise"
+            },
+            "de": {
+                "main-title": "Willkommen auf unserer mehrsprachigen Seite",
+                "subtitle": "Hier finden Sie Informationen zu verschiedenen Themen.",
+                "section1-title": "Über uns",
+                "section1-text": "Wir sind eine Organisation, die sich der Bereitstellung hochwertiger Dienstleistungen in verschiedenen Bereichen widmet und sich an die Bedürfnisse unserer Kunden anpasst.",
+                "section2-title": "Unsere Dienstleistungen",
+                "section2-list": [
+                    "Professionelle Beratung in Technologie.",
+                    "Maßgeschneiderte Softwareentwicklung.",
+                    "Schulungen und Bildungsworkshops."
+                ],
+                "section3-title": "Kontakt",
+                "section3-text": "Wenn Sie Fragen haben oder mehr über uns erfahren möchten, nehmen Sie gerne Kontakt mit uns auf. Wir sind hier, um Ihnen zu helfen.",
+                "footer-text": "Alle Rechte vorbehalten © 2024 - Unser Unternehmen"
+            }
+        };
+
+        function translatePage() {
+            // Obtener el idioma seleccionado
+            const selectedLanguage = document.getElementById("language").value;
+
+            // Traducir elementos con texto plano
+            document.getElementById("main-title").textContent = translations[selectedLanguage]["main-title"];
+            document.getElementById("subtitle").textContent = translations[selectedLanguage]["subtitle"];
+            document.getElementById("section1-title").textContent = translations[selectedLanguage]["section1-title"];
+            document.getElementById("section1-text").textContent = translations[selectedLanguage]["section1-text"];
+            document.getElementById("section3-title").textContent = translations[selectedLanguage]["section3-title"];
+            document.getElementById("section3-text").textContent = translations[selectedLanguage]["section3-text"];
+            document.getElementById("footer-text").textContent = translations[selectedLanguage]["footer-text"];
+
+            // Traducir lista de servicios
+            const serviceList = document.getElementById("section2-list");
+            serviceList.innerHTML = ""; // Limpiar lista
+            translations[selectedLanguage]["section2-list"].forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                serviceList.appendChild(li);
+            });
+
+            highlightSearch(); // Actualizar el resaltado después de traducir
+        }
+
+        function highlightSearch() {
+            const query = document.getElementById("search").value.toLowerCase();
+            const elementsToSearch = [
+                "main-title", "subtitle", "section1-title", "section1-text",
+                "section3-title", "section3-text", "footer-text"
+            ];
+
+            elementsToSearch.forEach(id => {
+                const element = document.getElementById(id);
+                const text = translations[document.getElementById("language").value][id];
+                if (query) {
+                    const highlightedText = text.replace(new RegExp(query, 'gi'), match => `<span class="highlight">${match}</span>`);
+                    element.innerHTML = highlightedText;
+                } else {
+                    element.textContent = text; // Restaurar texto original
+                }   
+            });
+
+            // Lista especial (ul)
+            const serviceList = document.getElementById("section2-list");
+            const listItems = translations[document.getElementById("language").value]["section2-list"];
+            serviceList.innerHTML = ""; // Limpiar lista
+            listItems.forEach(item => {
+                const highlightedItem = query ? item.replace(new RegExp(query, 'gi'), match => `<span class="highlight">${match}</span>`) : item;
+                const li = document.createElement("li");
+                li.innerHTML = highlightedItem;
+                serviceList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

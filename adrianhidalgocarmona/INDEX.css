@@ -1,0 +1,247 @@
+/* ================================
+    ESTILOS BASE
+================================ */
+body {
+	margin: 0;
+	font-family: Arial, sans-serif; /* Puedes ajustar la fuente */
+  }
+  
+  /* Hacemos que todas las imágenes sean fluidas */
+  img {
+	max-width: 100%;
+	height: auto;
+  }
+
+  p {
+	text-align: center;
+	text-decoration: none;
+  }
+
+/* Para móviles: convertimos el contenedor de productos en un carrusel horizontal */
+@media (max-width: 480px) {
+	/* Navegación en columna (ya existente) */
+	#inicio-container {
+	  flex-direction: column;
+	}
+	
+	/* Transformamos el contenedor en un scroll horizontal */
+	#Ropaparacomprar-container {
+	  display: flex;
+	  overflow-x: auto;
+	  scroll-snap-type: x mandatory;
+	  -webkit-overflow-scrolling: touch; /* para desplazamiento suave en iOS */
+	  gap: 10px; /* separación entre elementos */
+	  padding: 10px;
+	}
+	
+	/* Cada "slide" se alinea en el centro y se mantiene con ancho fijo */
+	#Ropaparacomprar-container > div {
+	  flex: 0 0 auto; /* evita que se ajusten automáticamente */
+	  scroll-snap-align: center;
+	  width: 90%; /* ancho casi completo de la pantalla */
+	}
+	
+	/* Ajuste del botón de "SHOW MORE" si fuera necesario */
+	.show-more-btn {
+	  padding: 8px 16px;
+	  font-size: 14px;
+	}
+	
+	/* Otros ajustes para CLUBVIP y FOOTER ya existentes */
+	#CLUBVIP {
+	  padding: 20px;
+	}
+	
+	#final {
+	  margin: 10px;
+	  width: 100%;
+	}
+  }
+  
+  
+  /* Banner: ahora ocupa el 100% del ancho */
+  #banner img {
+	width: 100%;
+	height: auto;
+  }
+  
+  /* Envios gratis */
+  #enviosgratis {
+	border: 5px solid black;
+	text-align: center;
+	font-family: 'DIN Neuzeit Grotesk', sans-serif;
+	background-color: #000;
+	color: #FFF;
+	padding: 10px 0;
+  }
+  
+  /* ================================
+	  CABECERA / NAV
+  ================================ */
+  #inicio-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+  }
+  
+  #inicio,
+  #inicio2 {
+	border: 0px solid transparent;
+	text-align: center;
+	margin: 5px;
+  }
+  
+  #inicio a {
+	text-decoration: none; 
+	color: #000; 
+	font-weight: bold; 
+	transition: color 0.3s, background-color 0.3s;
+	margin-right: 350px;
+  }
+  
+  #inicio a:hover {
+	color: #ff6600;
+	background-color: #dfcbcb;
+	border-radius: 5px;
+	padding: 3px 2px;
+  }
+  
+  /* ================================
+	  PRODUCTOS Y SECCIONES
+  ================================ */
+  
+  /* Contenedores de productos (Se adaptan de fila a columna en móvil) */
+  #Ropaparacomprar-container,
+  #Ropaparacomprar-container2,
+  #Ropaparacomprar-container3 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 20px auto; 
+  }
+  
+  /* Cada producto: utilizamos una clase genérica para evitar repetir código */
+  .producto {
+	border: 5px solid white;
+	background: #eaeaea;  /* fondo suave para visualizar */
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	font-family: 'DIN Neuzeit Grotesk', sans-serif;
+	/* Para que tres productos entren en fila en escritorio, se usa un ancho relativo */
+	flex: 1 1 calc(25% - 20px); /* 4 productos por fila */
+	box-sizing: border-box;
+  }
+  
+  /* Si tienes imágenes dentro del producto, asegúrate de que se adapten */
+  .producto img {
+	width: 100%;
+	max-width: 270px; /* Si deseas mantener un máximo */
+  }
+  
+  /* ================================
+	  CLUB VIP Y FOOTER
+  ================================ */
+  #CLUBVIP {
+	border: 5px solid white;
+	text-align: center;
+	clear: left;
+	background-image: url(https://agongym.com/cdn/shop/files/Disseny_sense_titol_6_a00a69a1-3435-4c0c-a23b-a207eb2c5012_1500x.png?v=1635291200);
+	background-size: cover;
+	background-position: center;
+	padding: 40px 20px;
+  }
+  
+  #final {
+	border: 5px solid white;
+	text-align: center;
+	margin: 20px auto;
+	padding: 20px;
+	box-sizing: border-box;
+  }
+  
+  /* ================================
+	  BOTONES
+  ================================ */
+  .show-more-btn {
+	background-color: #000;
+	color: #fff;
+	padding: 12px 24px;
+	font-size: 16px;
+	font-weight: bold;
+	border: 2px solid transparent;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+	outline: none;
+  }
+  
+  .show-more-btn:hover {
+	background-color: #fff;
+	color: #000;
+	border-color: #000;
+	transform: scale(1.05);
+  }
+  
+  .show-more-btn:active {
+	background-color: #222;
+	transform: scale(1);
+  }
+  
+  .show-more-btn:focus {
+	outline: none;
+  }
+  
+  /* ================================
+	  MEDIA QUERIES (RESPONSIVE)
+  ================================ */
+  
+  /* Para tablets y pantallas medianas */
+  @media (max-width: 768px) {
+	#inicio-container {
+	  flex-direction: column;
+	  align-items: center;
+	}
+	
+	/* Los productos se adaptan para mostrar 2 por fila */
+	.producto {
+	  flex: 1 1 calc(50% - 20px);
+	}
+	
+	/* Ajustar márgenes y paddings en textos y contenedores */
+	h2, p {
+	  text-align: center;
+	  font-size: 1.1rem;
+	}
+  }
+  
+  /* Para móviles */
+  @media (max-width: 480px) {
+	/* Navegación en columna */
+	#inicio-container {
+	  flex-direction: column;
+	}
+	
+	/* Los productos ocuparán casi el ancho completo */
+	.producto {
+	  flex: 1 1 90%;
+	}
+	
+	.show-more-btn {
+	  padding: 8px 16px;
+	  font-size: 14px;
+	}
+	
+	/* Ajuste para el CLUBVIP y FOOTER para evitar desbordes */
+	#CLUBVIP {
+	  padding: 20px;
+	}
+	
+	#final {
+	  margin: 10px;
+	  width: 100%;
+	}
+  }
+  

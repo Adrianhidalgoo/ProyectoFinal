@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario para miembros</title>
+    <link rel="stylesheet" href="Formulario de INDEX.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/LOGO tabla.jpg">
+	<link rel="icon" type="image/jpeg" sizes="32x32" href="img/LOGO tabla.jpg">
+	<link rel="icon" type="image/jpeg" sizes="16x16" href="img/LOGO tabla.jpg">
+	<link rel="manifest" href="ruta/a/site.webmanifest">
+	
+</head>
+<body>
+
+    <div class="form-container">
+        <div>
+            <center><a href="INDEX.html"><img src="img/LOGO tabla.jpg" height="100px" width="100px"></a></center>    
+        </div>
+
+        <h1>Formulario para miembros</h1>
+        <form action="adrian.php">
+            <div class="form-group">
+                <label for="Nombre completo">Nombre completo</label>
+                <input type="text" id="Nombre completo" placeholder="Adrian Hidalgo Carmona" name="Nombre completo" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="ahidalgo@gmail.com" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Telefono">Teléfono:</label>
+                <input type="tel" id="Telefono" name="Telefono" placeholder="999 999 999" pattern="[0-9]{9}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="fecha">Fecha de nacimiento:</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Tipo de miembro">Tipo de miembro:</label>
+                <select id="Tipo de miembro" name="Tipo de miembro" required>
+                    <option value="basic">Basic</option>
+                    <option value="premium">Premium</option>
+                    <option value="vip">VIP</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="Hora">Hora preferida para entrenar:</label>
+                <input type="time" id="Hora" name="Hora" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Objetivo">Objetivo fitness:</label>
+                <textarea id="Objetivo" name="Objetivo"  required style="resize: vertical"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Género:</label>
+                <input type="radio" id="Hombre" name="Género" value="Hombre">
+                <label for="Hombre">Hombre</label>
+                <input type="radio" id="Mujer" name="Género" value="Mujer">
+                <label for="Mujer">Mujer</label>
+                <input type="radio" id="Otro" name="Género" value="Otro">
+                <label for="Otro">Otro</label>
+            </div>
+            
+            <div class="form-group">
+                <label for="Rango">Nivel físico (1-10):</label>
+                <input type="range" id="Rango" name="Rango" min="1" max="10">
+            </div>
+            
+            <div class="form-group">
+                <label for="Archivo">Sube tu foto de perfil:</label>
+                <input type="file" id="Archivo" name="Archivo" accept="image/*">
+            </div>
+            
+            <div class="form-group">
+                <label for="Número">Número de visitas por semana:</label>
+                <input type="number" id="Número" name="Número" min="1" max="7" required>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit">Aceptar</button>
+            </div>
+        </form>
+
+        <!-- Botón para ir a INDEX.html -->
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="location.href='INDEX.html'" style="padding: 10px 20px; font-size: 16px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                Ir a Página Principal
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
